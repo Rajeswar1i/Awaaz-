@@ -1,0 +1,11 @@
+# Backend
+awaaz-backend/venv/
+awaaz-backend/__pycache__/
+awaaz-backend/*.pyc
+awaaz-backend/.env
+awaaz-backend/uploads/
+
+# Frontend
+awaaz-frontend/node_modules/
+awaaz-frontend/dist/
+awaaz-frontend/.env
