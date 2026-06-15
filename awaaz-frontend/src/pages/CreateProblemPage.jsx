@@ -32,7 +32,7 @@ export default function CreateProblemPage({ onNavigate }) {
     for (const file of files) {
       const formData = new FormData();
       formData.append("file", file);
-      const res = await fetch("http://localhost:8000/api/v1/upload", {
+      const res = await fetch(`${import.meta.env.VITE_API_BASE_URL || "http://localhost:8000/api/v1"}/upload`, {
         method: "POST",
         headers: { Authorization: `Bearer ${localStorage.getItem("access_token")}` },
         body: formData,

@@ -15,9 +15,14 @@ app = FastAPI(
     swagger_ui_parameters={"persistAuthorization": True}
 )
 
+import os
+allowed_origins = [
+    "http://localhost:5173",
+    os.getenv("FRONTEND_URL", ""),
+]
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173"],
+    allow_origins=[o for o in allowed_origins if o],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
